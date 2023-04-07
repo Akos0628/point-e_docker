@@ -1,0 +1,14 @@
+version: "3"
+services:
+  point-e:
+    build: .
+    ports:
+      - 5000:5000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    entrypoint: ["bash", "-c", "python app.py"]
