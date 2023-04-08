@@ -87,5 +87,9 @@ def generate_object():
 
     return send_file('mesh.ply')
 
+@app.route('/test', methods=['GET'])
+def load_last():
+    return send_file('mesh.ply')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
